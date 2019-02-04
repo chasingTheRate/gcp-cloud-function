@@ -11,6 +11,7 @@ async function helloWorld (req, res) {
   
   const tableName = process.env.tableName;
   console.log(`tableName: ${tableName}`);
+  console.log(`Env: ${process.env.NODE_ENV}`);
   
     // Creates a client
   const bigquery = new BigQuery();
