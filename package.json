@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chasingTheRate/gcp-cloud-function/issues"
   },
-  "homepage": "https://github.com/chasingTheRate/gcp-cloud-function#readme"
+  "homepage": "https://github.com/chasingTheRate/gcp-cloud-function#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^2.0.6"
+  }
 }
