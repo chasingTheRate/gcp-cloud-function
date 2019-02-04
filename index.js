@@ -10,12 +10,13 @@ const {BigQuery} = require('@google-cloud/bigquery');
 async function helloWorld (req, res) {
   
   const tableName = process.env.tableName;
+  console.log(`tableName: ${tableName}`);
   
     // Creates a client
   const bigquery = new BigQuery();
 
   const query = `SELECT name
-    FROM \`${tableName}\`
+    FROM \`bigquery-public-data.usa_names.usa_1910_2013\`
     WHERE state = 'TX'
     LIMIT 100`;
   const options = {
