@@ -5,7 +5,7 @@
  * @param {!express:Response} res HTTP response context.
  */
 
-import { BigQuery } from '@google-cloud/bigquery';
+const {BigQuery} = require('@google-cloud/bigquery');
 
 async function helloWorld (req, res) {
   
@@ -34,5 +34,4 @@ async function helloWorld (req, res) {
   res.status(200).send(rows);
 };
 
-const _helloWorld = helloWorld;
-export { _helloWorld as helloWorld };
+exports.helloWorld = helloWorld;
