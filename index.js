@@ -17,7 +17,7 @@ async function helloWorld (req, res) {
   const bigquery = new BigQuery();
 
   const query = `SELECT name
-    FROM \`bigquery-public-data.usa_names.usa_1910_2013\`
+    FROM \`${tableName}\`
     WHERE state = 'TX'
     LIMIT 100`;
   const options = {
