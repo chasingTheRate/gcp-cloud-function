@@ -36,7 +36,7 @@ async function helloWorld (req, res) {
   
   try {
     const response = await axios.post('https://gcp-cloud-function-receiver.herokuapp.com/helloworld', {data: rows});
-    res.status(200).send('OK');
+    res.status(200).send('Sent data successfully!');
   } catch (e) {
     console.log(e);
     res.status(400);
