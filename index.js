@@ -6,6 +6,7 @@
  */
 
 const {BigQuery} = require('@google-cloud/bigquery');
+const axios = require('axios');
 
 async function helloWorld (req, res) {
   
@@ -33,7 +34,13 @@ async function helloWorld (req, res) {
   // Waits for the query to finish
   const [rows] = await job.getQueryResults();
   
-  res.status(200).send(rows);
+  try {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
+    res.status(200).send(response.data);
+  } catch (e) {
+    res.status(200).send('error');
+  }
+
 };
 
 exports.helloWorld = helloWorld;
