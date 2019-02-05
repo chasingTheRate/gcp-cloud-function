@@ -35,10 +35,11 @@ async function helloWorld (req, res) {
   const [rows] = await job.getQueryResults();
   
   try {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
-    res.status(200).send(response.data);
+    const response = await axios.post('https://gcp-cloud-function-receiver.herokuapp.com/helloworld', {data: rows});
+    res.status(200).send('OK');
   } catch (e) {
-    res.status(200).send('error');
+    console.log(e);
+    res.status(400);
   }
 
 };
