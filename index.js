@@ -28,7 +28,6 @@ async function updateSorts (req, res) {
     const [rows] = await job.getQueryResults();
     // Post results to endpoint
     const response = await axios.post(postUrl, {data: rows});
-    console.log(response);
     res.status(200).send(response.data);
   } catch (e) {
     console.log(e);
