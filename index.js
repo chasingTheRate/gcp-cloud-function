@@ -11,12 +11,12 @@ const axios = require('axios');
 async function updateSorts (req, res) {
   
   const postUrl = process.env.postUrl;
-  const queryAsString = process.env.queryAsString
+  const query = 'SELECT * FROM \`plucky-agent-230717.GCC_ANALYTICS_FAKE.sorts\`';
 
   // Creates a client
   const bigquery = new BigQuery();
   const options = {
-    query: queryAsString,
+    query,
     // Location must match that of the dataset(s) referenced in the query.
     location: 'US',
   };
